@@ -1,0 +1,493 @@
+* {
+    font-family: monospace;
+    text-transform: uppercase;
+    background-color: #E3E3E3;
+}
+
+#mobile-warning {
+    display: none; /* hide by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ff9d00b7;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+    padding: 10px 0;
+    z-index: 2000;
+    font-family: Helvetica, sans-serif;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+    #mobile-warning {
+        display: block;
+    }
+    
+    /* Hide main content */
+    body > *:not(#mobile-warning):not(.loader) {
+        display: none;
+    }
+
+    /* ================= LOADER ================= */
+    .loader {
+        width: 45px;
+        aspect-ratio: 1;
+        --c: no-repeat linear-gradient(#ffae00 0 0);
+        background: 
+            var(--c) 0%   50%,
+            var(--c) 50%  50%,
+            var(--c) 100% 50%;
+        background-size: 20% 100%;
+        animation: l1 1s infinite linear;
+
+        /* Center the loader */
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2001; /* above the mobile warning */
+    }
+
+    @keyframes l1 {
+        0%  {background-size: 20% 100%,20% 100%,20% 100%}
+        33% {background-size: 20% 10% ,20% 100%,20% 100%}
+        50% {background-size: 20% 100%,20% 10% ,20% 100%}
+        66% {background-size: 20% 100%,20% 100%,20% 10% }
+        100%{background-size: 20% 100%,20% 100%,20% 100%}
+    }
+}
+
+#logo {
+    display: grid;
+    margin-left: 18px;
+    margin-top: 10px;
+    width: 10em;
+    height: 4em;
+    position: relative;
+    background: none;
+    flex-shrink: 1;
+}
+
+nav {
+    background-color: #ff9d00b7;
+    backdrop-filter: blur(3px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: #9b5f00b7 -40px 20px 30px inset;
+}
+
+#homepic {
+    width: 34px;
+    height: 28px;
+    background: transparent;
+}
+
+nav ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 10px 10px 10px;
+    margin: 0;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    background-color: transparent;
+    flex: 1;
+    justify-content: flex-end;
+    min-width: 0;
+}
+
+nav li:hover {
+    background-color: #E3E3E3;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.178);
+    transition: 0.4s ease-in-out;
+    color:black;
+}
+
+nav a:hover {
+    transition: 0.2s ease-in-out;
+    font-weight: 900;
+    color:black;
+}
+
+nav li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #ffcb2218;
+    backdrop-filter: blur(50em);
+    box-shadow:rgba(0, 0, 0, 0.068) 5px 5px;
+    border-radius: 1em;
+    flex-shrink: 1;
+    flex-basis: auto;
+    min-width: 0px;
+    max-width: 200px;
+    padding: clamp(12px, 4vw, 24px) clamp(20px, 6vw, 100px);
+    height: clamp(30px, 6vw, 50px);
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 900;
+    padding: 15px 80px 15px 80px;
+    background-color: transparent;
+    white-space: nowrap;
+}
+
+/*-------------------------------------------------------------*/
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+section {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    width: 1750px;
+    padding: 50px;
+    margin: 30px auto;
+
+    
+}
+
+#intro {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: "introtext LancePic1 LancePic1";
+    margin-top: 0px;
+    width: 100%;
+    height: 2000px;
+    padding-bottom: 320px;
+
+    background-image: url(BgPic.jpg);
+    background-size: 1920px 2400px;
+    background-repeat:no-repeat;
+    background-position: 0px -450px;
+}
+
+#LancePic1 {
+    grid-area: LancePic1;
+    display: flex;
+    align-items: center;
+    background: none;
+    height: 600px;
+    width: 600px;
+    margin-top: 150px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#LancePic1:hover {
+    position: sticky;
+    transform: rotate(10deg) scale(1.1);
+    transition: 0.4s ease-in-out;
+    
+}
+
+
+#name {font-size: 64px;
+    font-family:Helvetica, sans-serif;
+    font-weight: 1000;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    
+}
+
+.introtext {
+    grid-area: introtext;
+    margin-top: 120px;
+    margin-left: 70px;
+    padding: 80px;
+    color: #E3E3E3;
+    background-color: #ffad29b7;
+    border-radius: 10em 0em;
+    text-shadow: 2px 2px black;
+    backdrop-filter: blur(1.5px);
+    box-shadow: #c47900b7 30px -50px 30px inset;
+}
+
+.introtext > h3, h1{
+    background-color: transparent;
+}
+
+.introtext > p {
+    width: 470px;
+    height: 40px;
+    padding-left: 15px;
+    border-radius: 2em;
+    font-weight: 900;
+    color: #ff9d00;
+    background-color: #E3E3E3;
+    text-shadow: none;
+    align-content:center;
+}
+
+.introtext > h3 {
+    font-size: 30px;
+    margin-bottom: -5px;
+}
+
+/*-------------------------------------------------------------*/
+
+#fade {
+    align-items: center;
+    width: 1920px;
+    height: 1200px;
+    margin-top: -1650px;
+    background: linear-gradient(to bottom, transparent, 
+    rgba(255, 255, 255, 0.568), #ffffff, #ffffff);
+}
+
+#aboutme {
+    background-color: #ffffff34;
+    background-repeat: no-repeat;
+    box-shadow: inset rgba(209, 209, 209, 0.616) 100px 5vh 100px;
+    backdrop-filter: blur(0.2em);
+    border-width: 10px;
+    border-color: #e3e3e386;
+    border-radius: 2em 2em;
+
+    width: 1700px;
+    height: 950px;
+    display: grid;
+    text-align: justify;
+    font-size: 20px;
+    justify-content: left;
+    margin-top: -1080px;
+    padding: 0px;
+
+    gap: 50px;
+    grid-template-rows: repeat(2, 400px);
+    grid-template-columns: repeat(2, 400px);
+    grid-template-areas: "LancePic2 myself myself"
+                        "LancePic2 hobby hobby";
+    
+}
+
+#aboutme > .myself, .hobby {
+    margin-right: 100px;
+    margin-left: 300px;
+    margin-top: 100px;
+    padding: 50px;
+
+    color: white;
+    background-color: #ff9d0091;
+    box-shadow: inset #b3741086 100px 5vh 100px;
+    backdrop-filter: blur(2em);
+    border-radius: 0em 3em;
+    box-shadow: rgba(0, 0, 0, 0.589) 10px 10px 20px;
+}
+
+.myself > h2 {
+    font-family: Helvetica, sans-serif;
+    font-weight: 900;
+    padding-left: 100px;
+    padding-top: 10px;
+    width: 300px;
+    height: 50px;
+    border-radius: 2em 2em;
+    color: #ff9d00;
+}
+.hobby > h2 {
+    font-family: Helvetica, sans-serif;
+    font-weight: 900;
+    padding-left: 200px;
+    padding-top: 10px;
+    width: 600px;
+    height: 50px;
+    border-radius: 2em 2em;
+    color: #ff9d00;
+}
+
+.myself > p, h3 {
+    background-color: transparent;
+    font-weight: 900;
+}
+
+.myself > p:first-of-type {
+    text-indent: 2em;
+}
+
+.hobby > ul, li {
+    background-color: transparent;
+    font-weight: 900;
+    padding: 0px 60px 0px 20px;
+    text-align: justify;
+    list-style:inside;
+}
+
+.myself{grid-area: myself;}
+.hobby{grid-area: hobby;}
+
+#LancePic2 {
+    grid-area: LancePic2;
+    background-color: transparent;
+    width: 700px;
+    height: 700px;
+
+
+}
+
+/*-------------------------------------------------------------*/
+
+#picktitle {
+    height: 20px;
+    width: 1600px;
+    background-color: #ff9d0054;
+    background-repeat: no-repeat;
+    box-shadow: inset #ffab258f 100px 5vh 100px;
+    backdrop-filter: blur(2em);
+    border-color: #ff9d00;
+    border-radius: 2em 2em 0em 0em;
+    margin-top: 100px;
+
+    font-family: Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    font-style: italic;
+    align-content: center;
+    color: white;
+}
+
+#circlefade1 {
+    position: absolute;
+    border-radius: 100em;
+    background-color: #ff880088;
+    filter: blur(15em);
+    height: 1000px;
+    width: 1000px;
+    margin-top: 350px;
+    margin-left: -400px;
+}
+
+#circlefade2 {
+    position: absolute;
+    border-radius: 100em;
+    background-color: #ff9d0088;
+    filter: blur(15em);
+    height: 1000px;
+    width: 1000px;
+    margin-top: 350px;
+    margin-left: 1400px;
+}
+
+#moreabout {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 6fr 1fr 6fr;
+    grid-template-areas: 
+    "title1 title2 title3"
+    "game music movie"
+    "game music2 movie";
+    gap: 50px;
+
+    justify-items: top;
+    background-color: #ffffff70;
+    border-color: #e3e3e342;
+    border-width: 10px;
+    backdrop-filter: blur(0.5em);
+    align-items: start;
+    border-radius: 2em 2em;
+
+}
+
+#moreabout > div {
+    overflow-y:visible;
+    overflow-x: hidden;
+    background-image: radial-gradient(#ffffff, #b8b8b873);
+    padding: 15px;
+    margin-top: -25px;
+    height: 650px;
+    min-height: auto;
+    max-height: 650px;
+    border-radius: 1.5em 0em 0em 1.5em;
+}
+
+#moreabout img {
+    max-width: 80%;
+    max-height: 80%;
+    padding: 20px 0px 0px 25px;
+    margin: auto;
+    height: auto;
+    display: block;
+}
+
+#music iframe {
+    max-width: 90%;
+    max-height: 90%;
+    background-color: transparent;
+    margin:30px 0px -90px 25px;
+    height: auto;
+    display: block;
+}
+
+#movie iframe {
+    max-width: 100%;
+    max-height: 100%;
+    background-color: transparent;
+    width: 475px;
+    height: 250px;
+    margin:10px 0px 0px 15px;
+    display: block;
+}
+
+#moreabout p {
+    background-color: #ff9d00;
+    background-repeat: no-repeat;
+    box-shadow: inset rgba(209, 209, 209, 0.616) 100px 5vh 100px;
+    backdrop-filter: blur(1em);
+    border-color: #e3e3e386;
+    border-radius: 2em 2em;
+    padding: 10px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    text-align: center;
+
+    font-family: Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    font-style: italic;
+    align-content: center;
+    color: white;
+}
+
+p#radio {
+    margin-top: 10px;
+    
+}
+
+#game {grid-area: game;}
+div#music {grid-area: music;
+height: 500px;}
+div#music2 {grid-area: music2;
+height: 95px;}
+#movie {grid-area: movie;}
+
+img#spotify {
+    width: 60%;
+    height: 60%;
+    background: transparent;
+    margin: auto 70px;
+}
+
+
+
