@@ -266,17 +266,22 @@
                     </Footer>
 
                 <audio id="hover-audio" src="click.mp3" preload="auto"></audio>   
-                <script> document.addEventListener('contextmenu', event => event.preventDefult());
-
+                <script>
+                  document.addEventListener('contextmenu', event => event.preventDefault());
+                
                   const buttons = document.querySelectorAll('.sound-button');
-                    const audio = document.getElementById('hover-audio');
-                    buttons.forEach(button => {
-                        button.addEventListener('mouseenter', () => {
-                            audio.volume = 0.25;
-                            audio.currentTime = 0;
-                            audio.play();
-                        });
+                  const audio = document.getElementById('hover-audio');
+                
+                  buttons.forEach(button => {
+                    button.addEventListener('mouseenter', () => {
+                      audio.volume = 0.25;
+                      audio.currentTime = 0;
+                
+                      audio.play().catch(error => {
+                        console.log("Audio play blocked until user interacts with the page.");
+                      });
                     });
+                  });
                 </script>
         </body>
     </html>
