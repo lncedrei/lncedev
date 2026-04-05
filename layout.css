@@ -1051,7 +1051,6 @@ footer div {
 
 /*---------------------------------------*/
 
-/* Mobile - Everything below 768px */
 @media (max-width: 767px) {
     
 
@@ -1061,7 +1060,7 @@ footer div {
         width: 100% !important;
         height: 65px !important;
         padding: 0 10px !important;
-        gap: 0px !important;  /* PERFECT gap between logo & links */
+        gap: 0px !important; 
         justify-content: space-between !important;
         align-items: center !important;
     }
@@ -1069,23 +1068,22 @@ footer div {
     #logo {
         width: 70px !important;
         height: 24px !important;
-        margin: 0 !important;  /* No margin */
+        margin: 0 !important; 
         flex-shrink: 1;
     }
     
-    /* NAV LIST - Right side, perfect spacing */
     nav ul {
-        gap: 6px !important;  /* Small gaps between buttons */
-        margin: 0 !important;  /* No margin */
+        gap: 6px !important; 
+        margin: 0 !important;
         padding: 0 !important;
-        flex-shrink: 1;  /* Shrink if needed */
+        flex-shrink: 1;
     }
     
     nav li {
         padding: 6px 10px !important;
         min-width: 50px !important;
-        margin: 0 !important;  /* No margin */
-        gap: 0 !important;  /* No internal gap */
+        margin: 0 !important;
+        gap: 0 !important;
     }
     
     nav a {
@@ -1100,8 +1098,6 @@ footer div {
         height: 16px !important;
     }
 
-
-    /* SECTIONS */
     section {
         width: 80% !important;
         height: auto;
@@ -1111,7 +1107,6 @@ footer div {
         min-height: 60vh;
     }
 
-    /* INTRO SECTION */
     #intro {
         width: 100% !important;
         padding: 0;
@@ -1164,7 +1159,6 @@ footer div {
         justify-content: center;
     }
 
-    /* FADE & ABOUT */
     #fade {
         height: 400px;
         margin-top: -419px;
@@ -1215,12 +1209,12 @@ footer div {
 
     #picktitle, #title2 {
         width: 75% !important;
-        font-size: 26px !important;     /* Smaller font */
+        font-size: 26px !important; 
         text-align: center;
-        padding: 12px 18px !important;  /* Much smaller padding */
-        line-height: 1.2 !important;    /* Tighter line height */
-        margin: 20px auto !important;    /* Small margins */
-        min-height: 60px !important;    /* Fixed compact height */
+        padding: 12px 18px !important; 
+        line-height: 1.2 !important;
+        margin: 20px auto !important;
+        min-height: 60px !important;
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
@@ -1472,19 +1466,16 @@ footer div {
     grid-auto-flow: column;
     }
 
-
-
-    /* CIRCLE FADES - Hide on mobile */
     #circlefade1, #circlefade2, #circlefade3, #circlefade4 {
        display: none;
 
-    /* Hide fixed nav shadow on mobile */
+  
     nav {
         box-shadow: none;
     }
 }
 }
-/* Extra small mobile */
+
 @media (max-width: 480px) {
     #name {
         font-size: 36px;
