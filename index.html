@@ -242,6 +242,35 @@
                                         <div class="SR" id="socialshow"><img src="SocAccount.png" alt=""></div>
                                          </div>   
                                 </section>
+
+                        <div class="btn-wrapper menu-wrapper">      
+                        <button class="menu-btn" type="button">
+                            <img src="menuicon.png" width="40" height="40">
+                        </button>
+                        <menu>
+                            <ul>
+                                <li class="sound-button"><a href="#intro">HOME</a></li>
+                                <li class="sound-button"><a href="#aboutme">ABOUT ME</a></li>
+                                <li class="sound-button"><a href="#portfolio">PORTFOLIO</a></li>
+                                <li class="sound-button"><a href="#socials">SOCIALS</a></li>
+                            </ul>
+                                
+                            
+                        </menu>
+                        </div>
+
+                        <div class="btn-wrapper goUP-wrapper"> 
+                            <button class="goUP-btn" type="button"> 
+                            <a href="#intro"><img src="UPicon.png" width="40px" height="40px"></a>
+                            </button>     
+                        </div>    
+
+                        <div class="btn-wrapper darklight-wrapper">
+                            <button class="darklight-btn" id="theme-toggle" type="button"> 
+                            <img src="darkicon.png" id="theme-icon" alt="Toggle Theme" width="30px">
+                            </button>
+                        </div>  
+
                             </main>     
                     <Footer id="details">
                             <div class="foottitle">
@@ -266,22 +295,6 @@
                     </Footer>
 
                 <audio id="hover-audio" src="click.mp3" preload="auto"></audio>   
-                <script>
-                  document.addEventListener('contextmenu', event => event.preventDefault());
-                
-                  const buttons = document.querySelectorAll('.sound-button');
-                  const audio = document.getElementById('hover-audio');
-                
-                  buttons.forEach(button => {
-                    button.addEventListener('mouseenter', () => {
-                      audio.volume = 0.25;
-                      audio.currentTime = 0;
-                
-                      audio.play().catch(error => {
-                        console.log("Audio play blocked until user interacts with the page.");
-                      });
-                    });
-                  });
-                </script>
+                <script src="script.js"></script>
         </body>
     </html>
